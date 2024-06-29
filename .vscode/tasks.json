@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // Build tasks
+        {
+            "label": "build",
+            "detail": "Build the workspace (default)",
+            "type": "shell",
+            "command": "bash .vscode/scripts/build.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "Day 1",
+            "detail": "Welcome! Let's begin with Gazebo.",
+            "type": "shell",
+            "command": "bash .vscode/scripts/day1.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "Day 2",
+            "detail": "Teleoperating Florabot!",
+            "type": "shell",
+            "command": "bash .vscode/scripts/day2.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "Day 3",
+            "detail": "Create your first map with Florabot!",
+            "type": "shell",
+            "command": "bash .vscode/scripts/day3.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "Day 4",
+            "detail": "Make Florabot move autonomously!",
+            "type": "shell",
+            "command": "bash .vscode/scripts/day4.sh",
+            "problemMatcher": []
+        }
+    ]
+}
