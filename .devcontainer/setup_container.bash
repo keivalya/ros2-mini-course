@@ -61,3 +61,4 @@ echo "PYTHONWARNINGS=\"ignore:setup.py install is deprecated::setuptools.command
 
 # Add GAZEBO path so we can easily include models
 echo "export IGN_GAZEBO_RESOURCE_PATH=/workspace/install/ros2_mini_course/share/ros2_mini_course/worlds_and_models/" >> /home/ros/.bashrc
+echo "export GAZEBO_MODEL_PATH=/workspace/install/ros2_mini_course/share/ros2_mini_course/worlds_and_models/" >> /home/ros/.bashrc
