@@ -1,5 +1,5 @@
 {
-    "name": "Start Creating Robots WSL Dev Container",
+    "name": "ROS2 Mini Course using WSL Dev Container",
     "dockerComposeFile": [
         "docker-compose.yml"
     ],
