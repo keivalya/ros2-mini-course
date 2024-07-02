@@ -8,7 +8,7 @@ apt-get upgrade -y
 apt install -y mesa-utils
 
 # ------------------------------------------------------
-# Now download and install openvdb so STVL plugin works. Refer to the followingn:
+# Now download and install openvdb so STVL plugin works. 
 # https://github.com/SteveMacenski/spatio_temporal_voxel_layer/issues/232
 # ------------------------------------------------------
 mkdir openvdb
@@ -43,12 +43,15 @@ echo 'ros ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/ros && chmod 0440 /etc/sudoer
 chown -R ros /workspace
 
 # Install some extra stuff
+
 apt-get install -y ros-humble-rqt-robot-steering ros-humble-slam-toolbox ros-humble-navigation2 ros-humble-nav2-bringup
 
 # Do an initial build
+
 colcon build --symlink-install
 
-# Get python dependancies
+# Get python deps
+
 sudo apt install python3-pip
 pip install black
 
@@ -60,5 +63,4 @@ echo "source /workspace/install/setup.bash" >> /home/ros/.bashrc
 echo "PYTHONWARNINGS=\"ignore:setup.py install is deprecated::setuptools.command.install,ignore:easy_install command is deprecated::setuptools.command.easy_install\"; export PYTHONWARNINGS" >> /home/ros/.bashrc
 
 # Add GAZEBO path so we can easily include models
-echo "export IGN_GAZEBO_RESOURCE_PATH=/workspace/install/ros2_mini_course/share/ros2_mini_course/worlds_and_models/" >> /home/ros/.bashrc
-echo "export GAZEBO_MODEL_PATH=/workspace/install/ros2_mini_course/share/ros2_mini_course/worlds_and_models/" >> /home/ros/.bashrc
+echo "export IGN_GAZEBO_RESOURCE_PATH=/workspace/install/start_creating_robots/share/start_creating_robots/worlds_and_models/" >> /home/ros/.bashrc
