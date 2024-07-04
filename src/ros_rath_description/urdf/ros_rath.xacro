@@ -1,0 +1,141 @@
+<?xml version="1.0" ?>
+<robot name="ros_rath" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find ros_rath_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find ros_rath_description)/urdf/ros_rath.trans" />
+<xacro:include filename="$(find ros_rath_description)/urdf/ros_rath.gazebo" />
+<xacro:include filename="$(find ros_rath_description)/urdf/example_gazebo.xacro" />
+
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.05351120705226561 0.0022242446765815393 0.09983654253164718" rpy="0 0 0"/>
+    <mass value="3.4990277858908225"/>
+    <inertia ixx="0.029248" iyy="0.04088" izz="0.026645" ixy="0.0" iyz="-1e-06" ixz="0.004617"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ros_rath_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ros_rath_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rw_1">
+  <inertial>
+    <origin xyz="1.3572735907407818e-08 -0.007429906824178961 7.703107097328799e-08" rpy="0 0 0"/>
+    <mass value="0.04673002592203319"/>
+    <inertia ixx="2.4e-05" iyy="4.5e-05" izz="2.3e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.086 0.077777 -0.042876" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ros_rath_description)/meshes/rw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.086 0.077777 -0.042876" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ros_rath_description)/meshes/rw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lw_1">
+  <inertial>
+    <origin xyz="-1.6812944092503557e-08 0.00742982132393516 4.719616154141848e-08" rpy="0 0 0"/>
+    <mass value="0.04673015906170595"/>
+    <inertia ixx="2.4e-05" iyy="4.5e-05" izz="2.3e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.086 -0.082223 -0.042876" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ros_rath_description)/meshes/lw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.086 -0.082223 -0.042876" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ros_rath_description)/meshes/lw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-0.000879780527735588 -9.045063808073902e-05 0.012460994735723943" rpy="0 0 0"/>
+    <mass value="0.08892684105064558"/>
+    <inertia ixx="2.1e-05" iyy="2e-05" izz="3.2e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.097 -0.002223 -0.104876" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ros_rath_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.097 -0.002223 -0.104876" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ros_rath_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_1">
+  <inertial>
+    <origin xyz="-6.273731534278681e-13 -4.0643030239928546e-08 -0.008499922628011804" rpy="0 0 0"/>
+    <mass value="0.04110250388446592"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1 -0.002223 -0.019876" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ros_rath_description)/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1 -0.002223 -0.019876" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find ros_rath_description)/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="right_wheel_joint" type="continuous">
+  <origin xyz="-0.086 -0.077777 0.042876" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rw_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="left_wheel_joint" type="continuous">
+  <origin xyz="-0.086 0.082223 0.042876" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lw_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lidar_rotation" type="fixed">
+  <origin xyz="0.097 0.002223 0.104876" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="caster_joint" type="fixed">
+  <origin xyz="0.1 0.002223 0.019876" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="caster_1"/>
+</joint>
+
+</robot>
